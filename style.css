@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header & Navbar */
+header {
+  background-color: #6c48c5; 
+  padding: 10px 5%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.logo {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #fff7f7;
+  font-family: cursive;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px; /* Tambahkan jarak antar elemen menu */
+}
+
+nav ul li {
+  position: relative; /* Dibutuhkan untuk pseudo-element garis */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff7f7; 
+  transition: color 0.3s ease, font-weight 0.3s ease;
+  font-weight: 600; /* Menebalkan font */
+  font-size: 1.1rem; /* Tambahkan ukuran font */
+  padding: 5px 0;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  color: #c68fe6;
+}
+
+/* Menambahkan garis di bawah saat hover */
+nav ul li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px; /* Tinggi garis */
+  background: #c68fe6; /* Warna garis */
+  transition: width 0.3s ease;
+  margin: auto;
+}
+
+nav ul li a:hover::after {
+  width: 100%; /* Garis penuh saat di-*hover* */
+}
+
+
+
+/* Hero Section */
+.beranda {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 5%;
+  height: 90vh;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(
+    to bottom,
+    #5e2a99,
+    #fff7f7 30% 70%,
+    #5e2a99 100%
+  );
+}
+
+/* Teks Hero */
+.beranda-text {
+  max-width: 45%;
+}
+
+.beranda-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #1230ae; 
+}
+
+.beranda-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #6c48c5; 
+}
+
+.btn-primary {
+  background-color: #c68fe6; 
+  color: #1230ae; 
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #6c48c5; 
+  color: #fff7f7; 
+}
+
+/* Gambar  */
+.beranda-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border: 5px solid #6c48c5; 
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Efek bayangan lembut */
+  transition: transform 0.3s ease;
+}
+
+.beranda-image img:hover {
+  transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.card {
+  background: #fff7f7;
+  padding: 30px 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3),
+                10px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Section  */
+section {
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+h2,
+h3 {
+  color: #1230ae;
+  padding-left: 40px;
+}
+
+article p {
+  text-align: justify;
+  padding-left: 50px;
+  padding-right: 30px;
+}
+article ul {
+  padding-left: 85px;
+  text-align: justify;
+  padding-right: 30px;
+}
+
+/* Aside (Tips Belajar) */
+aside {
+  background-color: #fff7f7;
+  border-left: 5px solid #c68fe6;
+  border-right: 5px solid #c68fe6;
+  margin: 0 20px 20px 20px;
+  padding: 20px;
+}
+
+#tips {
+  padding-left: 10px;
+}
+.gambartips {
+  display: flex;
+  gap: 20px;
+}
+
+.belajar {
+  gap: 20px;
+  width: 250px;
+  height: auto;
+  background-color: #c68fe6;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.belajar:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+.belajar > img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: grayscale(100%);
+  transition: filter 0.3s; /* Transisi halus saat filter berubah */
+}
+
+.belajar:hover img {
+  filter: grayscale(0%); /* Menghilangkan grayscale saat hover */
+}
+.belajar > p {
+  font-weight: bold;
+  color: #fff7f7;
+}
+
+/* Footer */
+footer {
+  background-color: #6c48c5;
+  color: #fff7f7;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  header.navbar {
+    flex-direction: column;
+  }
+ 
+  header.navbar nav ul {
+    flex-wrap: wrap;
+    column-gap: 0.5rem;
+  }
+ 
+  main {
+    padding: 1rem 3rem;
+  }
+ 
+  main section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+ 
+  main section .beranda-text .card {
+    font-size: 3rem;
+  }
+ 
+  main section p {
+    font-size: 1rem;
+  }
+ 
+  main section .beranda-image {
+    order: -1;
+  }
+
+  .gambartips {
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
